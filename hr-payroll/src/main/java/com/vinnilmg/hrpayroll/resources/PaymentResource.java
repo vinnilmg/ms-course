@@ -1,5 +1,6 @@
 package com.vinnilmg.hrpayroll.resources;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.vinnilmg.hrpayroll.entities.Payment;
 import com.vinnilmg.hrpayroll.services.PaymentService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,12 +18,20 @@ public class PaymentResource {
     @Autowired
     private PaymentService paymentService;
 
+    @HystrixCommand(fallbackMethod = "getPaymentAlternative")
     @GetMapping(value = "/{workerId}/days/{days}")
     public ResponseEntity<Payment> getPayment(
             @PathVariable Long workerId,
             @PathVariable Integer days) {
         log.info("Buscando pagamento para o trabalhador: {}", workerId);
-        return ResponseEntity.ok(paymentService.getPayment(workerId, days));
+        Payment payment = paymentService.getPayment(workerId, days);
+        return ResponseEntity.ok(payment);
+    }
+
+    public ResponseEntity<Payment> getPaymentAlternative(Long workerId, Integer days) {
+        // Caso dê erro na chamada original, será direcionado para esse método "alternativo"
+        Payment payment = new Payment("Alternative Worker", 400.0, days);
+        return ResponseEntity.ok(payment);
     }
 
 }
