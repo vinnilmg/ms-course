@@ -36,6 +36,13 @@ public class WorkerResource {
         log.info("Buscando trabalhador com Id: {}", id);
         log.info("PORT: {}", env.getProperty("local.server.port"));
 
+        // Teste de Timeout
+        try {
+            Thread.sleep(3000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         Worker worker = workerRepository.findById(id).get();
         return ResponseEntity.ok(worker);
     }
