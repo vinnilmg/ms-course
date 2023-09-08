@@ -20,3 +20,14 @@ INSERT INTO tb_worker(name, daily_income) VALUES('Vini', 10000.0);
 
 ### Eureka Server
 Dashboard: http://localhost:8761/
+
+### Variáveis de ambiente
+Criar:
+```
+setx {VARIAVEL} {VALOR}
+``` 
+
+Exibir:
+```
+echo %{VARIAVEL}%
+``` 
