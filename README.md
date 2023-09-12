@@ -19,6 +19,7 @@ INSERT INTO tb_worker(name, daily_income) VALUES('Vini', 10000.0);
 ```
 
 <h4>Insert de usuários, funcões e many to many:</h4>
+
 ```sql
 INSERT INTO tb_user (name, email, password) VALUES ('Jon Snow', 'jonsnow@email.com', 'g^yf7$fpdyj7+2H9');
 INSERT INTO tb_user (name, email, password) VALUES ('Luffy', 'pirateking@email.com', 'n+mWeRrq9B2*f$M&');
