@@ -3,7 +3,24 @@
 ### Curso
 https://www.udemy.com/share/103FNT3@-30JpKbA1NX-PT3aw6c82DDMSEztllLcUilEWFLgCQ8Re1OUA5zt-56brk6xVgPz/
 
-### Descrição
+### Descrição dos microsserviços
+<h4>hr-api-gateway-zuul</h4>
+<p>Centraliza as chamadas aos serviços hr-user, hr-payroll e hr-worker.</p>
+
+<h4>hr-config-server</h4>
+<p>Busca as propriedades de configuração dos projetos, todas estão armazenadas no github.</p>
+
+<h4>hr-eureka-server</h4>
+<p>Gerencia o status, localização e balanceamento de carga dos serviços clientes.</p>
+
+<h4>hr-payroll</h4>
+<p>Microsserviço responsável por gerenciar a folha de pagamento.</p>
+
+<h4>hr-user</h4>
+<p>>Microsserviço responsável por gerenciar os usuários.</p>
+
+<h4>hr-worker</h4>
+<p>>Microsserviço responsável por gerenciar os trabalhadores.</p>
 
 ### Versões utilizadas
 - Java 11

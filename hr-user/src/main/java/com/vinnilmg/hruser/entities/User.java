@@ -21,10 +21,11 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(unique = true)
     private String email;
     private String password;
 
-    // Para nao poder repetir o mesmo usuário com a mesma role usa-se o Set
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "tb_user_role",
@@ -32,5 +33,5 @@ public class User implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     @Setter(AccessLevel.NONE)
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>(); // Para nao poder repetir o mesmo usuário com a mesma role usa-se o Set
 }
