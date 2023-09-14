@@ -28,4 +28,5 @@ public class UserResource {
         User user = userRepository.findByEmail(email);
         return ResponseEntity.ok(user);
     }
+
 }

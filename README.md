@@ -17,10 +17,10 @@ https://www.udemy.com/share/103FNT3@-30JpKbA1NX-PT3aw6c82DDMSEztllLcUilEWFLgCQ8R
 <p>Microsserviço responsável por gerenciar a folha de pagamento.</p>
 
 <h4>hr-user</h4>
-<p>>Microsserviço responsável por gerenciar os usuários.</p>
+<p>Microsserviço responsável por gerenciar os usuários.</p>
 
 <h4>hr-worker</h4>
-<p>>Microsserviço responsável por gerenciar os trabalhadores.</p>
+<p>Microsserviço responsável por gerenciar os trabalhadores.</p>
 
 ### Versões utilizadas
 - Java 11
