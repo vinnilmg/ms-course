@@ -5,13 +5,16 @@ https://www.udemy.com/share/103FNT3@-30JpKbA1NX-PT3aw6c82DDMSEztllLcUilEWFLgCQ8R
 
 ### Descrição dos microsserviços
 <h4>hr-api-gateway-zuul</h4>
-<p>Centraliza as chamadas aos serviços hr-user, hr-payroll e hr-worker.</p>
+<p>Centraliza as chamadas aos serviços hr-user, hr-payroll, hr-worker e hr-oauth.</p>
 
 <h4>hr-config-server</h4>
 <p>Busca as propriedades de configuração dos projetos, todas estão armazenadas no github.</p>
 
 <h4>hr-eureka-server</h4>
 <p>Gerencia o status, localização e balanceamento de carga dos serviços clientes.</p>
+
+<h4>hr-oauth</h4>
+<p>Microsserviço responsável pela autenticação do usuário e gerar o JWT.</p>
 
 <h4>hr-payroll</h4>
 <p>Microsserviço responsável por gerenciar a folha de pagamento.</p>
@@ -38,8 +41,8 @@ INSERT INTO tb_worker(name, daily_income) VALUES('Vini', 10000.0);
 <h4>Insert de usuários, funcões e many to many:</h4>
 
 ```sql
-INSERT INTO tb_user (name, email, password) VALUES ('Jon Snow', 'jonsnow@email.com', 'g^yf7$fpdyj7+2H9');
-INSERT INTO tb_user (name, email, password) VALUES ('Luffy', 'pirateking@email.com', 'n+mWeRrq9B2*f$M&');
+INSERT INTO tb_user (name, email, password) VALUES ('Jon Snow', 'jonsnow@email.com', '$2a$12$5WriKe32Ben26zZADrFp8.t7lXfI5Qgh13yYtaDHODWA.Lfl/fU5S');
+INSERT INTO tb_user (name, email, password) VALUES ('Luffy', 'pirateking@email.com', '$2a$12$wixBYwic3YTQE7I9kY6dJOxeQkJNQ7C9CiwZSIqSdjK7AIITQwAlm');
 
 INSERT INTO tb_role (role_name) VALUES ('OPERATOR');
 INSERT INTO tb_role (role_name) VALUES ('ADMIN');
@@ -51,6 +54,9 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 
 ### Eureka Server
 Dashboard: http://localhost:8761/
+
+### Rota de autenticação
+Endpoint: /hr-oauth/oauth/token
 
 ### Variáveis de ambiente
 Criar:
