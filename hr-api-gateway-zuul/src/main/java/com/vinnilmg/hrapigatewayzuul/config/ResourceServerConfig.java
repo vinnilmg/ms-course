@@ -8,15 +8,14 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-import javax.ws.rs.HttpMethod;
-
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     private static final String[] PUBLIC_PATHS = { "/hr-oauth/oauth/token" };
     private static final String[] OPERATOR_PATHS = { "/hr-worker/**" };
-    private static final String[] ADMIN_PATHS = { "/hr-payroll/**", "/hr-user/**" };
+    private static final String[] ADMIN_PATHS = {
+            "/hr-payroll/**", "/hr-user/**", "/actuator/**", "/hr-worker/actuator/**", "/hr-oauth/actuator/**", "/hr-oauth/users/**" };
 
     private static final String ADMIN_PROFILE = "ADMIN";
     private static final String OPERATOR_PROFILE = "OPERATOR";
