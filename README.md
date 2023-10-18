@@ -87,3 +87,9 @@ fetch("http://localhost:8765/hr-worker/workers", {
   "credentials": "omit"
 });
 ```
+
+### Docker
+Buildar o projeto:
+```
+mvnw clean package
+```
