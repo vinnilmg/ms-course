@@ -92,4 +92,5 @@ fetch("http://localhost:8765/hr-worker/workers", {
 Buildar o projeto:
 ```
 mvnw clean package
+mvnw clean package -DskipTests
 ```
