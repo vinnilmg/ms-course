@@ -89,8 +89,42 @@ fetch("http://localhost:8765/hr-worker/workers", {
 ```
 
 ### Docker
-Buildar o projeto:
+Buildar os projetos:
 ```
 mvnw clean package
 mvnw clean package -DskipTests
+```
+
+Comandos utilizados:
+- Criar rede "hr-net":
+```
+docker network create hr-net
+```
+
+- Rodar o container com a imagem do banco:
+```
+docker run -p 5432:5432 --name hr-worker-pg12 --network hr-net -e POSTGRES_PASSWORD={PASSW} -e POSTGRES_DB=db_hr_worker postgres:12-alpine
+docker run -p 5433:5432 --name hr-user-pg12 --network hr-net -e POSTGRES_PASSWORD={PASSW} -e POSTGRES_DB=db_hr_user postgres:12-alpine
+```
+
+- Gerar as imagens dos projetos:
+```
+docker build -t hr-config-server:v1 . 
+docker build -t hr-eureka-server:v1 . 
+docker build -t hr-worker:v1 . 
+docker build -t hr-user:v1 .
+docker build -t hr-payroll:v1 .
+docker build -t hr-oauth:v1 .
+docker build -t hr-api-gateway-zuul:v1 .
+```
+
+- Rodar o container com cada imagem criada:
+```
+docker run -p 8888:8888 --name hr-config-server --network hr-net -e GIT_USERNAME={USER} -e GIT_ACCESS_TOKEN={TOKEN} hr-config-server:v1
+docker run -p 8761:8761 --name hr-eureka-server --network hr-net hr-eureka-server:v1
+docker run -P --network hr-net hr-worker:v1
+docker run -P --network hr-net hr-user:v1
+docker run -P --network hr-net hr-payroll:v1
+docker run -P --network hr-net hr-oauth:v1
+docker run -p 8765:8765 --name hr-api-gateway-zuul --network hr-net hr-api-gateway-zuul:v1
 ```

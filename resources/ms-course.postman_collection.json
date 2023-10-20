@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "9e7aea68-0663-434a-8007-2a6b2724d285",
+		"name": "ms-course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7403997"
+	},
+	"item": [
+		{
+			"name": "hr-worker",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-worker/workers",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"workers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConfigs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-worker/workers/configs",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"workers",
+								"configs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actuator refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-worker/actuator/refresh",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-worker/workers/3",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"workers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hr-payroll",
+			"item": [
+				{
+					"name": "getPayment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-payroll/payments/1/days/10",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-payroll",
+								"payments",
+								"1",
+								"days",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hr-config-server",
+			"item": [
+				{
+					"name": "default configs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-worker/default",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-worker: test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-worker/test",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-worker: dev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-worker/dev",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-worker: prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-worker/prod",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-worker",
+								"prod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-user: test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-user/test",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-user: dev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-user/dev",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-user",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-user: prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{config-host}}/hr-user/prod",
+							"host": [
+								"{{config-host}}"
+							],
+							"path": [
+								"hr-user",
+								"prod"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hr-user",
+			"item": [
+				{
+					"name": "findById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-user/users/1",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-user",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-user/users/search?email=pirateking@email.com",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-user",
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pirateking@email.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hr-oauth",
+			"item": [
+				{
+					"name": "findByEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-oauth/users/search?email=pirateking@email.com",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-oauth",
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pirateking@email.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code >= 200 && responseCode.code < 300) {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    postman.setEnvironmentVariable(\"access-token\", jsonData.access_token); \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client-name}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-gateway-host}}/hr-oauth/oauth/token",
+							"host": [
+								"{{api-gateway-host}}"
+							],
+							"path": [
+								"hr-oauth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
